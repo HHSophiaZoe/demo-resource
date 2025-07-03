@@ -1,7 +1,9 @@
 package com.hit.demo.core.service;
 
-public interface UserService
-//        extends IService<UserModel, String>
+import com.hit.demo.domain.model.UserModel;
+import com.hit.rest.base.IService;
+
+public interface UserService extends IService<UserModel, String>
 {
 
 }

@@ -1,4 +1,4 @@
-package com.hit.movie.common.enums;
+package com.hit.demo.common.enums;
 
 public enum VideoProcessType {
 

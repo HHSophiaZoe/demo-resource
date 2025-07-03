@@ -1,4 +1,4 @@
-package com.hit.movie.common.constant;
+package com.hit.demo.common.constant;
 
 import com.hit.cache.util.CacheUtils;
 import lombok.AccessLevel;

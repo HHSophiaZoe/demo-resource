@@ -27,7 +27,7 @@ import java.util.Map;
 @EnableJpaRepositories(
         entityManagerFactoryRef = "defaultEntityManagerFactory",
         transactionManagerRef = "defaultTransactionManager",
-        basePackages = {"com.hit.movie.infrastructure.store.repository"}
+        basePackages = {"com.hit.demo.infrastructure.store.repository"}
 )
 @ConditionalOnProperty(value = {"datasource.default.enable"}, havingValue = "true")
 public class DataSourceDefaultConfig {
@@ -51,7 +51,7 @@ public class DataSourceDefaultConfig {
         log.info("DB config defaultDataSource: {}", properties.getJdbcUrl());
         return builder.dataSource(this.dataSource())
                 .properties(this.dataProperties())
-                .packages("com.hit.movie.domain.entity")
+                .packages("com.hit.demo.domain.entity")
                 .persistenceUnit("defaultEntityManager")
                 .build();
     }

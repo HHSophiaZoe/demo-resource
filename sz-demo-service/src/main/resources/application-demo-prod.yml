@@ -20,8 +20,8 @@ spring:
 # App configuration properties
 #
 app:
-  name: MOVIE-SERVICE
-  movie-api-path-prefix: /movie-service
+  name: DEMO-SERVICE
+  demo-api-path-prefix: /demo-service
   enable-log-request-http: ${APP_ENABLE_LOG_REQUEST:true}
   security:
     server-key: ${APP_SERVER_KEY:Base@2024}
@@ -39,7 +39,7 @@ app:
 
 datasource:
   default:
-    enable: true
+    enable: false
     jdbc-url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/movie}
     driver-class-name: org.postgresql.Driver
     username: ${POSTGRES_USER:movie}
@@ -82,3 +82,11 @@ cache:
 logging:
   level:
     com.hit: info
+    org:
+      apache:
+        kafka:
+          clients:
+            consumer: info
+      springframework:
+        kafka:
+          listener: info

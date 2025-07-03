@@ -20,8 +20,8 @@ spring:
 # App configuration properties
 #
 app:
-  name: MOVIE-SERVICE
-  movie-api-path-prefix: /movie-service
+  name: DEMO-SERVICE
+  demo-api-path-prefix: /demo-service
   enable-log-request-http: ${APP_ENABLE_LOG_REQUEST:true}
   security:
     server-key: ${APP_SERVER_KEY:Base@2024}
@@ -40,15 +40,15 @@ app:
 datasource:
   default:
     enable: true
-    jdbc-url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/movie}
+    jdbc-url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/local}
     driver-class-name: org.postgresql.Driver
-    username: ${POSTGRES_USER:movie}
-    password: ${POSTGRES_PASSWORD:movie@2025}
+    username: ${POSTGRES_USER:local}
+    password: ${POSTGRES_PASSWORD:local@2025}
     minimum-idle: 10
     maximum-pool-size: 50
     idle-timeout: 600000
     max-lifetime: 1800000
-    schema: ${POSTGRES_SCHEMA:movie}
+    schema: ${POSTGRES_SCHEMA:demo}
     hibernate:
       ddl-auto: update
       show_sql: true
@@ -65,7 +65,7 @@ messaging:
       retries: 3
     consumer:
       bootstrap-servers: localhost:9092
-      group-id: movie-service
+      group-id: demo-service
       max-poll-interval-ms: 40000
       enable-auto-commit: true
       auto-commit-interval: 1000
